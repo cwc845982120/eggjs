@@ -2,9 +2,14 @@
 
 module.exports = app => {
   class HomeController extends app.Controller {
-    * index() {
-      this.ctx.body = 'hi, egg';
-    }
-  }
-  return HomeController;
+		async home() {
+			const id = this.ctx.request.body.id;
+			const user = await this.ctx.service.home.find(id);
+      		this.ctx.body = {
+				user: user
+			};
+	  	}
+	}
+
+  	return HomeController;
 };
