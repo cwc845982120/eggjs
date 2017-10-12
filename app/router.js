@@ -1,5 +1,5 @@
-'use strict';
+
 
 module.exports = app => {
-  	app.post('/home', app.controller.home.home);
+    app.post('/home', app.controller.home.home);
 };
