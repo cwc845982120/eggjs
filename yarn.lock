@@ -1987,7 +1987,7 @@ egg-watcher@^2.2.0:
     sdk-base "^3.1.1"
     wt "^1.1.1"
 
-egg@^1.8.0:
+egg@^1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/egg/-/egg-1.9.0.tgz#b36ec10917e511955b0928bb208b684a0aa202f6"
   dependencies:
