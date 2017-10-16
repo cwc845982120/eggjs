@@ -15,6 +15,8 @@ module.exports = appInfo => {
 				password: 'aBc882322438123',
 				// 数据库名
 				database: 'wensentDB',
+				//是否开启调试
+				debug: true,
 			},
 			// 是否加载到 app 上，默认开启
 			app: true,
@@ -39,6 +41,18 @@ module.exports = appInfo => {
 		allowMethods: 'GET,POST,PUT,DELETE,POST,OPTION,PUT,HEAD,PATCH',
 		credentials: true
 	};
+
+	//logger
+	config.logger = {
+		consoleLevel: 'DEBUG',
+		appLogName: `${appInfo.name}-api.log`,
+		coreLogName: 'egg-web.log',
+		agentLogName: 'egg-agent.log',
+		errorLogName: 'common-error.log',
+	}
+
+	//全局中间件
+	// config.middleware = [ 'interceptor' ];
 
 	return config;
 };
