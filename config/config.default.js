@@ -16,7 +16,7 @@ module.exports = appInfo => {
 				// 数据库名
 				database: 'wensentDB',
 				//是否开启调试
-				debug: true,
+				debug: false
 			},
 			// 是否加载到 app 上，默认开启
 			app: true,

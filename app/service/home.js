@@ -7,6 +7,14 @@ module.exports = app => {
                 id: id
             });
             return user;
+		}
+
+		async queryInfoById (id) {
+            const user = await this.app.mysql.query(
+				'SELECT * FROM T_users as u' +
+				' LEFT JOIN T_user_goodAt g' +
+				' on u.id = g.id WHERE g.id = ?', [id]);
+            return user;
         }
 	}
     return HomeService;
