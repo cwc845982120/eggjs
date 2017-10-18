@@ -11,6 +11,14 @@ module.exports = app => {
             };
 		}
 
+		async addUser () {
+            const userInfo = this.ctx.request.body;
+			await this.ctx.service.home.addUser(userInfo);
+            this.ctx.body = {
+                success: true
+            };
+		}
+
 		async getInfo () {
             const id = this.ctx.request.body.id;
             const user = await this.ctx.service.home.queryInfoById(id);
